@@ -65,7 +65,7 @@ function App() {
   })
 
   const fetchSensorData = async () => {
-    return await axios.get('http://localhost:4000/sensor/')
+    return await axios.get('https://sensor-data-bi26.onrender.com/sensor/')
   }
 
   const handleSubmit = () => {
@@ -75,7 +75,7 @@ function App() {
   const submitData = () => {
     if (update == false) {
       axios
-        .post('http://localhost:4000/sensor/add', {
+        .post('https://sensor-data-bi26.onrender.com/sensor/add', {
           air_quality: aq,
           temperature: temp,
           humidity: humi,
@@ -100,7 +100,7 @@ function App() {
         })
     } else {
       axios
-        .post(`http://localhost:4000/sensor/update/${id}`, {
+        .post(`https://sensor-data-bi26.onrender.com/sensor/update/${id}`, {
           air_quality: aq,
           temperature: temp,
           humidity: humi,
@@ -139,7 +139,7 @@ function App() {
 
   const deleteData = (id) => {
     axios
-      .delete(`http://localhost:4000/sensor/${id}`)
+      .delete(`https://sensor-data-bi26.onrender.com/sensor/${id}`)
       .then((res) => {
         console.log(res)
         refetch()
